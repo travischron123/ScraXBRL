@@ -37,7 +37,7 @@ class ScrapeAndExtract:
 	
 	def get_all_keys(self):
 		scraped_data_log = pickle.load(open(settings.SCRAPE_LOG_FILE_PATH, "rb"))
-		self.scraped_keys = scraped_data_log.keys()
+		self.scraped_keys = list(scraped_data_log.keys())
 		extracted_data_log = pickle.load(open(settings.EXTRACT_LOG_FILE_PATH, "rb"))
 		self.extracted_keys = extracted_data_log.keys()
 		sk_set = set(self.scraped_keys)
